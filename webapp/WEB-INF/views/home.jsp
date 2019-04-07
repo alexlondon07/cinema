@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
@@ -15,5 +15,28 @@
 			<li>${ movie }</li>
 		</c:forEach>
 	</ol>
+
+	Table to movies
+	<table border="1">
+		<tr>
+			<th>id</th>
+			<th>Title</th>
+			<th>Duration</th>
+			<th>Classification</th>
+			<th>Gender</th>
+		</tr>
+		<tbody>
+			<c:forEach items="${movies}" var="movie">
+				<tr>
+					<td>${ movie.id }</td>
+					<td>${ movie.title }</td>
+					<td>${ movie.duration } min.</td>
+					<td>${ movie.classification }</td>
+					<td>${ movie.gender }</td>
+				</tr>
+			</c:forEach>
+		</tbody>
+	</table>
+	
 </body>
 </html>
