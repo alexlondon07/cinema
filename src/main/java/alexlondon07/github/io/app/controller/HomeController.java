@@ -1,5 +1,8 @@
 package alexlondon07.github.io.app.controller;
 
+import java.util.LinkedList;
+import java.util.List;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,6 +13,20 @@ public class HomeController {
 	
 	@RequestMapping(value = "/home", method = RequestMethod.GET)
 	public String goHome() {
+		return "home";
+	}
+	
+	@RequestMapping(value = "/", method = RequestMethod.GET)
+	public String goMain(Model model) {
+		
+		List<String> movies = new LinkedList<>();
+		movies.add("Rapidos y furiosos");
+		movies.add("El aro 2");
+		movies.add("Aliens");
+		movies.add("La purga");
+		
+		model.addAttribute("movies", movies);
+		
 		return "home";
 	}
 	
