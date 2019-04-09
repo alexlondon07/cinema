@@ -19,5 +19,7 @@
 			</property>
 		</bean>
 
+	<!-- Mapeando los directorios estaticos -->
+	<mvc:resources mapping="/resources/**" location="/resources/" />
 
 </beans>

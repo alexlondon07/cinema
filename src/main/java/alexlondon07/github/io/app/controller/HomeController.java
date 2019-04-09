@@ -55,6 +55,7 @@ public class HomeController {
 			movie1.setGender("Action");
 			movie1.setClassification("B");
 			movie1.setReleaseDate( format.parse("02-02-2017") ); 
+			movie1.setImage("power_ranger.jpg");
 			
 			Movie movie2 = new Movie();
 			movie2.setId(2);
@@ -63,6 +64,7 @@ public class HomeController {
 			movie2.setGender("Action");
 			movie2.setClassification("B");
 			movie2.setReleaseDate( format.parse("02-02-2019") ); 
+			movie2.setImage("la_purga.jpg");
 			
 			Movie movie3 = new Movie();
 			movie3.setId(3);
@@ -71,6 +73,7 @@ public class HomeController {
 			movie3.setGender("Action");
 			movie3.setClassification("B");
 			movie3.setReleaseDate( format.parse("02-02-2018") ); 
+			movie3.setImage("contratiempo.jpg");
 			
 			list.add(movie1);
 			list.add(movie2);
