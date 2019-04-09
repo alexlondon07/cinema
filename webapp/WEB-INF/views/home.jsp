@@ -46,7 +46,16 @@
 								<td>${ movie.gender }</td>
 								<td><img width="80" height="60" class="img-responsive" alt="Responsive image" src="${urlPublic}/images/${movie.image}"></td>
 								<td><fmt:formatDate value="${ movie.releaseDate }" pattern="dd-MM-yyyy"/></td>
-								<td>${ movie.status }</td>
+								<td>
+									<c:choose>
+										<c:when test="${ movie.status=='Active' }">
+											<span class="label label-success">Activa</span>
+										</c:when>
+										<c:otherwise>
+											<span class="label label-danger">Inactiva</span>
+										</c:otherwise>
+									</c:choose>
+								</td>
 							</tr>
 						</c:forEach>
 					</tbody>

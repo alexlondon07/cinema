@@ -74,6 +74,7 @@ public class HomeController {
 			movie3.setClassification("B");
 			movie3.setReleaseDate( format.parse("02-02-2018") ); 
 			movie3.setImage("contratiempo.jpg");
+			movie3.setStatus("Inactive");
 			
 			list.add(movie1);
 			list.add(movie2);
