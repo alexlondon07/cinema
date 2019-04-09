@@ -10,13 +10,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Welcome to cinema app</title>
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-	crossorigin="anonymous">
-	
- <spring:url value="/resources" var="urlPublic" />
+
+<spring:url value="/resources" var="urlPublic" />
+
+<!-- bootstrap CSS -->
+<link rel="stylesheet"  href="${urlPublic}/bootstrap/css/bootstrap.min.css" />	
 
 </head>
 <body>
