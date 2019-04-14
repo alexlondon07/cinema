@@ -24,13 +24,6 @@ public class HomeController {
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String showMain(Model model) {
-		
-		/*List<String> movies = new LinkedList<>();
-		movies.add("Rapidos y furiosos");
-		movies.add("El aro 2");
-		movies.add("Aliens");
-		movies.add("La purga");*/
-		
 		List<Movie> movies = getList();
 		model.addAttribute("movies", movies);
 		return "home";
