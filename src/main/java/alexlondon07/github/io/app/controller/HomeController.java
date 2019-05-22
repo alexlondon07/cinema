@@ -8,9 +8,9 @@ import java.util.List;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import alexlondon07.github.io.app.model.Movie;
@@ -22,12 +22,12 @@ public class HomeController {
 	
 	private SimpleDateFormat dateFormat =  new SimpleDateFormat(Constants.DATE_FORMAT);
 	
-	@RequestMapping(value = "/home", method = RequestMethod.GET)
+	@GetMapping(path = "/home")
 	public String goHome() {
 		return "home";
 	}
 	
-	@RequestMapping(value="/search", method = RequestMethod.POST)
+	@PostMapping(path = "/search")
 	public String search(@RequestParam("date") String date, Model model) {
 		
 		List<String> listDates = Util.getNextDays(4);		
@@ -39,7 +39,7 @@ public class HomeController {
 		return "home";
 	}
 	
-	@RequestMapping(value = "/", method = RequestMethod.GET)
+	@GetMapping(path = "/")
 	public String showMain(Model model) {
 		
 		List<String> listDates = Util.getNextDays(4);		
@@ -105,9 +105,9 @@ public class HomeController {
 	 * Metodo para mostrar el detalle de una pelicula
 	 * @param model 
 	 * @param idMovie Identificador de la pelicula
-	 * @return
+	 * @return String
 	 */
-	@RequestMapping(value="/detail/{id}/{date}", method=RequestMethod.GET)
+	@GetMapping(value="/detail/{id}/{date}")
 	public String showDetail(Model model, @PathVariable("id") int idMovie, @PathVariable("date") String date) {
 		
 		System.out.println("Ide: " + idMovie + " Date: " + date);
