@@ -11,11 +11,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-
-
+import org.springframework.web.bind.annotation.RequestParam;
 
 import alexlondon07.github.io.app.model.Movie;
 import alexlondon07.github.io.app.util.Constants;
+import alexlondon07.github.io.app.util.Util;
 
 @Controller
 public class HomeController {
@@ -27,9 +27,24 @@ public class HomeController {
 		return "home";
 	}
 	
+	@RequestMapping(value="/search", method = RequestMethod.POST)
+	public String search(@RequestParam("date") String date, Model model) {
+		
+		List<String> listDates = Util.getNextDays(4);		
+		List<Movie> movies = getList();
+		model.addAttribute("listDates", listDates);
+		model.addAttribute("movies", movies);
+		model.addAttribute("searchDate", date);
+		
+		return "home";
+	}
+	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String showMain(Model model) {
+		
+		List<String> listDates = Util.getNextDays(4);		
 		List<Movie> movies = getList();
+		model.addAttribute("listDates", listDates);
 		model.addAttribute("movies", movies);
 		model.addAttribute("searchDate", dateFormat.format(new Date()));
 		return "home";
